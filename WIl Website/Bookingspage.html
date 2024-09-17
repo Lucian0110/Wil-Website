@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+        }
+        .logo {
+            height: 50px; /* Adjust size to be smaller */
+            margin-right: 15px;
+        }
+        header h1 {
+            margin: 0;
+            flex-grow: 1;
+            color: gold; /* Change heading color to gold */
+        }
+        nav {
+            margin-left: auto;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        form {
+            max-width: 500px; /* Reduced width for compact view */
+            margin: 0 auto;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: white;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+        }
+        input[type="submit"],
+        input[type="button"] {
+            background-color: gold;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: darkgoldenrod;
+        }
+        .checkbox-group {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            flex-basis: 45%;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .fee-display {
+            margin-top: 20px;
+            font-size: 18px;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="empowering.png" alt="Logo" class="logo"/>
+        <h1>Empowering The Nation</h1>
+        <nav>
+            <a href="home.html">Homepage</a>
+            <a href="Courses.html">Courses Page</a>
+            <a href="Shortcourses.html">Shortcourses Page</a>
+            <a href="bookings.html">Bookings Page</a>
+            <a href="contact.html">Contact Page</a>
+            <a href="About Us.html">About Us Page</a>
+        </nav>
+    </header>
+    <h3>Book Our Courses</h3>
+    <p>Please enter your details below and any courses you would like to take. You may use the calculator below to provide you with your quote.</p>
+    <style>
+        ul {
+            list-style-type: disc; /* Default bullet style */
+            margin: 20px;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Discount Offers</h1>
+    <ul>
+        <li>2 Courses - 5% off</li>
+        <li>3 Courses - 10% off</li>
+        <li>More than Three Courses - 15% off</li>
+    </ul>
+</body>
+</html>
+
+    <div class="content">
+        <form id="booking-form" action="submit-booking.php" method="post">
+            <h2>Booking Form</h2>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="street-name">Street Name</label>
+            <input type="text" id="street-name" name="street-name" required>
+
+            <label for="suburb">Suburb</label>
+            <input type="text" id="suburb" name="suburb" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="zip-code">Zip / Coastal Code</label>
+            <input type="number" id="zip-code" name="zip-code" required>
+
+            <fieldset class="checkbox-group">
+                <legend>Select Services:</legend>
+                <label><input type="checkbox" name="services[]" value="First Aid" data-fee="1500"> First Aid (R1500)</label>
+                <label><input type="checkbox" name="services[]" value="Child Minding" data-fee="750"> Child Minding (R750)</label>
+                <label><input type="checkbox" name="services[]" value="Sewing" data-fee="1500"> Sewing (R1500)</label>
+                <label><input type="checkbox" name="services[]" value="Cooking" data-fee="750"> Cooking (R750)</label>
+                <label><input type="checkbox" name="services[]" value="Landscaping" data-fee="1500"> Landscaping (R1500)</label>
+                <label><input type="checkbox" name="services[]" value="Garden Maintenance" data-fee="750"> Garden Maintenance (R750)</label>
+                <label><input type="checkbox" name="services[]" value="Life Skills" data-fee="1500"> Life Skills (R1500)</label>
+            </fieldset>
+
+            <input type="button" value="Calculate Fees" onclick="calculateFees()">
+            <div class="fee-display" id="fee-display">Total Fee: R0</div>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function calculateFees() {
+            let totalFee = 0;
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+            
+            checkboxes.forEach(checkbox => {
+                totalFee += parseFloat(checkbox.getAttribute('data-fee'));
+            });
+            
+            document.getElementById('fee-display').textContent = `Total Fee: R${totalFee}`;
+        }
+    function calculateFees() {
+        let totalFee = 0;
+        const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+        const numCourses = checkboxes.length;
+
+        // Calculate the total fee
+        checkboxes.forEach(checkbox => {
+            totalFee += parseFloat(checkbox.getAttribute('data-fee'));
+        });
+
+        // Apply discounts based on the number of courses
+        let discount = 0;
+        if (numCourses >= 3) {
+            discount = 0.15; // 15% off for more than three courses
+        } else if (numCourses === 3) {
+            discount = 0.10; // 10% off for exactly two courses
+        } else if (numCourses === 2) {
+            discount = 0.05; // 5% off for exactly two courses
+        } else if (numCourses === 1) {
+            discount = 0; // No discount for one course
+        }
+
+        // Calculate the final fee after discount
+        const discountedFee = totalFee * (1 - discount);
+
+        // Display the final fee
+        document.getElementById('fee-display').textContent = `Total Fee: R${discountedFee.toFixed(2)}`;
+    }
+</script>
+
+    </script>
+</body>
+</html>
