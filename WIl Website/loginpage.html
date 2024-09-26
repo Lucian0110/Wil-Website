@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website - Sign Up</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+        }
+        .logo {
+            height: 50px; /* Adjust size to be smaller */
+            margin-right: 15px;
+        }
+        header h1 {
+            margin: 0;
+            flex-grow: 1;
+            color: gold; /* Change heading color to gold */
+        }
+        nav {
+            margin-left: auto;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        form {
+            max-width: 400px; /* Max width of the form */
+            width: 100%; /* Full width */
+            background-color: #222; /* Form background */
+            padding: 20px; /* Padding for the form */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: white;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%; /* Full width of input */
+            padding: 10px; /* Padding for input */
+            border: 1px solid #444; /* Border for input */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #333; /* Input background */
+            color: white; /* Input text color */
+            margin-top: 5px; /* Margin above inputs */
+        }
+        input[type="submit"] {
+            background-color: gold; /* Button background color */
+            color: black; /* Button text color */
+            border: none; /* Remove default border */
+            padding: 10px 20px; /* Button padding */
+            font-size: 16px; /* Text size */
+            margin-top: 20px; /* Margin above button */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 5px; /* Rounded corners */
+        }
+        input[type="submit"]:hover {
+            background-color: darkgoldenrod; /* Darker color on hover */
+        }
+        h2, h3, h4 {
+            color: gold; /* Gold color for headings */
+        }
+        .link {
+            margin-top: 20px; /* Space above the link */
+            color: white; /* Link color */
+            text-decoration: underline; /* Underline for emphasis */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        .link:hover {
+            color: gold; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="empowering.png" alt="Logo" class="logo"/>
+        <h1>Empowering The Nation</h1>
+        <nav>
+            <a href="Homepage.html">Homepage</a>
+            <a href="Courses.html">Courses page</a>
+            <a href="Shortcourses.html">Shortcourses page</a>
+            <a href="Bookingspage.html">Bookings page</a>
+            <a href="contact.html">Contact page</a>
+            <a href="About Us.html">About Us Page</a>
+            <a href="loginpage.html">Login Page</a>
+        </nav>
+    </header>
+    <div class="content">
+        <form id="create-account-form" onsubmit="handleSignUp(event)">
+            <h2>Create New Account</h2>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Sign Up">
+        </form>
+        <p class="link" onclick="window.location.href='loginpage.pt2.html'">Already Registered? Log in here.</p>
+    </div>
+
+    <script>
+        function handleSignUp(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Here, you can add any sign-up logic (e.g., sending data to a server)
+            // For now, we will just navigate to the login page
+            alert("Account created! Navigating to login page...");
+            window.location.href = "loginpage.pt2.html"; // Navigate to the login page
+        }
+    </script>
+</body>
+</html>

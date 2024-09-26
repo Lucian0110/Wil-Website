@@ -19,13 +19,13 @@
             background-color: #333;
         }
         .logo {
-            height: 50px;
+            height: 50px; /* Adjust size to be smaller */
             margin-right: 15px;
         }
         header h1 {
             margin: 0;
             flex-grow: 1;
-            color: gold;
+            color: gold; /* Change heading color to gold */
         }
         nav {
             margin-left: auto;
@@ -45,7 +45,7 @@
             flex-direction: column;
         }
         form {
-            max-width: 500px;
+            max-width: 500px; /* Reduced width for compact view */
             margin: 0 auto;
             background-color: #222;
             padding: 20px;
@@ -104,13 +104,6 @@
             font-size: 18px;
             color: gold;
         }
-        .thank-you {
-            display: none;
-            margin-top: 20px;
-            color: gold;
-            font-size: 20px;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -124,20 +117,33 @@
             <a href="bookings.html">Bookings Page</a>
             <a href="contact.html">Contact Page</a>
             <a href="About Us.html">About Us Page</a>
-            <a href="loginpage.html">Login Page</a>
         </nav>
     </header>
-    <div class="content">
-        <h3>Book Our Courses</h3>
-        <p>Please enter your details below and any courses you would like to take. You may use the calculator below to provide you with your quote.</p>
-        <h1>Discount Offers</h1>
-        <ul>
-            <li>2 Courses - 5% off</li>
-            <li>3 Courses - 10% off</li>
-            <li>More than Three Courses - 15% off</li>
-        </ul>
+    <h3>Book Our Courses</h3>
+    <p>Please enter your details below and any courses you would like to take. You may use the calculator below to provide you with your quote.</p>
+    <style>
+        ul {
+            list-style-type: disc; /* Default bullet style */
+            margin: 20px;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Discount Offers</h1>
+    <ul>
+        <li>2 Courses - 5% off</li>
+        <li>3 Courses - 10% off</li>
+        <li>More than Three Courses - 15% off</li>
+    </ul>
+</body>
+</html>
 
-        <form id="booking-form">
+    <div class="content">
+        <form id="booking-form" action="submit-booking.php" method="post">
             <h2>Booking Form</h2>
             <label for="first-name">First Name</label>
             <input type="text" id="first-name" name="first-name" required>
@@ -179,44 +185,49 @@
             
             <input type="submit" value="Submit">
         </form>
-
-        <div class="thank-you" id="thank-you-message">Thank you for your submission! An Email will be sent to you shortly!</div>
     </div>
 
     <script>
-        document.getElementById('booking-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            document.getElementById('thank-you-message').style.display = 'block'; // Show thank you message
-            this.reset(); // Reset the form
-            document.getElementById('fee-display').textContent = 'Total Fee: R0'; // Reset the fee display
-        });
-
         function calculateFees() {
             let totalFee = 0;
             const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
-            const numCourses = checkboxes.length;
-
-            // Calculate the total fee
+            
             checkboxes.forEach(checkbox => {
                 totalFee += parseFloat(checkbox.getAttribute('data-fee'));
             });
-
-            // Apply discounts based on the number of courses
-            let discount = 0;
-            if (numCourses >= 3) {
-                discount = 0.15; // 15% off for more than three courses
-            } else if (numCourses === 3) {
-                discount = 0.10; // 10% off for exactly two courses
-            } else if (numCourses === 2) {
-                discount = 0.05; // 5% off for exactly two courses
-            }
-
-            // Calculate the final fee after discount
-            const discountedFee = totalFee * (1 - discount);
-
-            // Display the final fee
-            document.getElementById('fee-display').textContent = `Total Fee: R${discountedFee.toFixed(2)}`;
+            
+            document.getElementById('fee-display').textContent = `Total Fee: R${totalFee}`;
         }
+    function calculateFees() {
+        let totalFee = 0;
+        const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+        const numCourses = checkboxes.length;
+
+        // Calculate the total fee
+        checkboxes.forEach(checkbox => {
+            totalFee += parseFloat(checkbox.getAttribute('data-fee'));
+        });
+
+        // Apply discounts based on the number of courses
+        let discount = 0;
+        if (numCourses >= 3) {
+            discount = 0.15; // 15% off for more than three courses
+        } else if (numCourses === 3) {
+            discount = 0.10; // 10% off for exactly two courses
+        } else if (numCourses === 2) {
+            discount = 0.05; // 5% off for exactly two courses
+        } else if (numCourses === 1) {
+            discount = 0; // No discount for one course
+        }
+
+        // Calculate the final fee after discount
+        const discountedFee = totalFee * (1 - discount);
+
+        // Display the final fee
+        document.getElementById('fee-display').textContent = `Total Fee: R${discountedFee.toFixed(2)}`;
+    }
+</script>
+
     </script>
 </body>
 </html>
