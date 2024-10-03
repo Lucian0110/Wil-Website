@@ -1,0 +1,172 @@
+/* Existing styles in styles.css */
+
+/* Styling for h2 and h3 headings to be gold */
+h2,
+h3 {
+    color: gold;
+    /* Set the text color to gold */
+}
+
+/* Additional styles to ensure they integrate well with the rest of your design */
+body {
+    font-family: Arial, sans-serif;
+    /* Ensure a consistent font across the site */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    /* Align items vertically in the center */
+    justify-content: space-between;
+    /* Distribute space between items */
+    padding: 10px;
+    /* Optional padding for better spacing */
+    background-color: #f8f8f8;
+    /* Optional background color */
+}
+
+.container img {
+    height: 30px;
+    /* Adjust image size */
+    margin-right: 10px;
+    /* Space between the image and heading */
+}
+
+.container h1 {
+    font-size: 20px;
+    /* Make heading smaller */
+    margin: 0;
+    /* Remove default margin */
+    line-height: 1.2;
+    /* Adjust line height for better vertical alignment */
+}
+
+.navigation {
+    margin-left: auto;
+    /* Push navigation links to the right */
+}
+
+.navigation a {
+    margin-left: 15px;
+    /* Space between navigation links */
+    text-decoration: none;
+    /* Remove underline from links */
+    color: #000;
+    /* Change color of the links */
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    /* Center the image vertically */
+    margin: 20px;
+    /* Add some margin around the container */
+}
+
+.about-container img {
+    margin-right: 20px;
+    /* Space between the image and text */
+    height: 150px;
+    /* Ensure image height is consistent */
+}
+
+.about-content {
+    max-width: 600px;
+    /* Control the width of the content area */
+}
+
+/* Set the background color of the entire page to black */
+body {
+    background-color: black;
+    /* Set the background color to black */
+    color: white;
+    /* Set the default text color to white */
+    font-family: Arial, sans-serif;
+    /* Ensure a consistent font across the site */
+}
+
+/* Set the color of paragraph text to white */
+p {
+    color: white;
+    /* Set paragraph text color to white */
+}
+
+/* Styling for h2 and h3 headings to be gold */
+h2,
+h3 {
+    color: gold;
+    /* Set the text color of h2 and h3 to gold */
+}
+
+/* Existing styles for .container, .navigation, .about-container, etc. */
+.container {
+    display: flex;
+    align-items: center;
+    /* Align items vertically in the center */
+    justify-content: space-between;
+    /* Distribute space between items */
+    padding: 10px;
+    /* Optional padding for better spacing */
+    background-color: #333;
+    /* Optional background color for the container */
+}
+
+.container img {
+    height: 30px;
+    /* Adjust image size */
+    margin-right: 10px;
+    /* Space between the image and heading */
+}
+
+.container h1 {
+    font-size: 20px;
+    /* Make heading smaller */
+    margin: 0;
+    /* Remove default margin */
+    line-height: 1.2;
+    /* Adjust line height for better vertical alignment */
+}
+
+.navigation {
+    margin-left: auto;
+    /* Push navigation links to the right */
+}
+
+.navigation a {
+    margin-left: 15px;
+    /* Space between navigation links */
+    text-decoration: none;
+    /* Remove underline from links */
+    color: white;
+    /* Change color of the links to white */
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    /* Center the image vertically */
+    margin: 20px;
+    /* Add some margin around the container */
+}
+
+.about-container img {
+    margin-right: 20px;
+    /* Space between the image and text */
+    height: 150px;
+    /* Ensure image height is consistent */
+}
+
+.about-content {
+    max-width: 600px;
+    /* Control the width of the content area */
+}
