@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* Container for logo, heading, and navigation */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333; /* Grey background */
+}
+
+.container img {
+    height: 50px; /* Adjusted size for logo to match */
+    margin-right: 15px;
+}
+
+.container h1 {
+    margin: 0;
+    flex-grow: 1;
+    color: gold; /* Changed heading color to gold */
+}
+
+/* Navigation Styling */
+.navigation {
+    margin-left: auto;
+}
+
+.navigation a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+    padding: 10px; /* Added padding to match home and booking page */
+}
+
+.navigation a:hover {
+    background-color: #555; /* Added hover effect */
+}
+
+/* About Us Page Styles */
+.about-container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.about-container img {
+    margin-right: 20px;
+    height: 150px;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+/* Headings Styles for Gold Color */
+h2,
+h3 {
+    color: gold;
+}
+
+/* Contact Page Specific Styles */
+.map-container {
+    display: flex;
+    gap: 10px;
+}
+
+.map-container iframe {
+    border: 0;
+    flex: 1;
+}
+
+/* Phone number, email, and office locations styling */
+p,
+ol {
+    color: white;
+}
+
+ol li {
+    list-style-type: decimal;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+    color: white;
+}

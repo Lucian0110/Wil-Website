@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="css_assets/Styles.css">
+
+</head>
+<body>
+    <header>
+        <img src="empowering.png" alt="Logo" class="logo"/>
+        <h1>Empowering The Nation</h1>
+        <nav>
+           
+            <a href="1. Homepage.html">HOME</a>
+            <a href="2. About Us.html">ABOUT US</a>
+            <a href="Courses.html">COURSES</a>
+            <a href="Short Courses.html">SHORT COURSES</a>
+            <a href="5. Bookingspage.html">BOOKINGS</a>
+            <a href="6. Contact.html">CONTACT</a>
+        </nav>
+    </header>
+    <div class="content">
+        <h3>Book Our Courses</h3>
+        <p>Please enter your details below and any courses you would like to take. You may use the calculator below to provide you with your quote.</p>
+        <h1>Discount Offers</h1>
+        <ul>
+            <li>2 Courses - 5% off</li>
+            <li>3 Courses - 10% off</li>
+            <li>More than Three Courses - 15% off</li>
+        </ul>
+
+        <form id="booking-form">
+            <h2>Booking Form</h2>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="street-name">Street Name</label>
+            <input type="text" id="street-name" name="street-name" required>
+
+            <label for="suburb">Suburb</label>
+            <input type="text" id="suburb" name="suburb" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="zip-code">Zip / Coastal Code</label>
+            <input type="number" id="zip-code" name="zip-code" required>
+
+            <fieldset class="checkbox-group">
+                <legend>Select Services:</legend>
+                <label><input type="checkbox" name="services[]" value="First Aid" data-fee="1500"> First Aid (R1500)</label>
+                <label><input type="checkbox" name="services[]" value="Child Minding" data-fee="750"> Child Minding (R750)</label>
+                <label><input type="checkbox" name="services[]" value="Sewing" data-fee="1500"> Sewing (R1500)</label>
+                <label><input type="checkbox" name="services[]" value="Cooking" data-fee="750"> Cooking (R750)</label>
+                <label><input type="checkbox" name="services[]" value="Landscaping" data-fee="1500"> Landscaping (R1500)</label>
+                <label><input type="checkbox" name="services[]" value="Garden Maintenance" data-fee="750"> Garden Maintenance (R750)</label>
+                <label><input type="checkbox" name="services[]" value="Life Skills" data-fee="1500"> Life Skills (R1500)</label>
+            </fieldset>
+
+            <input type="button" value="Calculate Fees" onclick="calculateFees()">
+            <div class="fee-display" id="fee-display">Total Fee: R0</div>
+            
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="thank-you" id="thank-you-message">Thank you for your submission! An Email will be sent to you shortly!</div>
+    </div>
+
+    <script>
+        document.getElementById('booking-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            document.getElementById('thank-you-message').style.display = 'block'; // Show thank you message
+            this.reset(); // Reset the form
+            document.getElementById('fee-display').textContent = 'Total Fee: R0'; // Reset the fee display
+        });
+
+        function calculateFees() {
+            let totalFee = 0;
+            const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+            const numCourses = checkboxes.length;
+
+            // Calculate the total fee
+            checkboxes.forEach(checkbox => {
+                totalFee += parseFloat(checkbox.getAttribute('data-fee'));
+            });
+
+            // Apply discounts based on the number of courses
+            let discount = 0;
+            if (numCourses >= 3) {
+                discount = 0.15; // 15% off for more than three courses
+            } else if (numCourses === 3) {
+                discount = 0.10; // 10% off for exactly two courses
+            } else if (numCourses === 2) {
+                discount = 0.05; // 5% off for exactly two courses
+            }
+
+            // Calculate the final fee after discount
+            const discountedFee = totalFee * (1 - discount);
+
+            // Display the final fee
+            document.getElementById('fee-display').textContent = `Total Fee: R${discountedFee.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

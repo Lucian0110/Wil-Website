@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+}
+
+.logo {
+    height: 50px; /* Adjust size to be smaller */
+    margin-right: 15px;
+}
+
+header h1 {
+    margin: 0;
+    flex-grow: 1;
+    color: gold; /* Change heading color to gold */
+}
+
+/* Navigation Styles */
+nav {
+    margin-left: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* Content Styles */
+.content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    max-width: 500px; /* Max width of the form */
+    width: 100%; /* Full width */
+    background-color: #222; /* Form background */
+    padding: 20px; /* Padding for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"] {
+    width: calc(100% - 22px); /* Adjust width for padding */
+    padding: 10px; /* Padding for input */
+    border: 1px solid #444; /* Border for input */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #333; /* Input background */
+    color: white; /* Input text color */
+    margin-top: 5px; /* Margin above inputs */
+}
+
+/* Button Styles */
+input[type="submit"],
+input[type="button"],
+.button-link {
+    background-color: gold; /* Button background color */
+    color: black; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 16px; /* Text size */
+    margin-top: 20px; /* Margin above button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+.button-link:hover {
+    background-color: darkgoldenrod; /* Darker color on hover */
+}
+
+/* Headings Styles for Gold Color */
+h2, h3, h4 {
+    color: gold; /* Gold color for headings */
+}
+
+/* Checkbox Group Styles */
+.checkbox-group {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    flex-basis: 45%;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Fee Display and Thank You Message */
+.fee-display {
+    margin-top: 20px;
+    font-size: 18px;
+    color: gold;
+}
+
+.thank-you {
+    display: none;
+    margin-top: 20px;
+    color: gold;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* About Us Page Styles */
+.about-container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.about-container img {
+    margin-right: 20px;
+    height: 150px;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+/* Contact Page Specific Styles */
+.map-container {
+    display: flex;
+    gap: 10px;
+}
+
+.map-container iframe {
+    border: 0;
+    flex: 1;
+}
+
+/* Phone number, email, and office locations styling */
+p, ol {
+    color: white;
+}
+
+ol li {
+    list-style-type: decimal;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+    color: white;
+}
