@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Page</title>
+    <title>ETN | BOOKING PAGE</title>
     <link rel="stylesheet" href="css_assets/Styles.css">
-
 </head>
 <body>
     <header>
         <img src="empowering.png" alt="Logo" class="logo"/>
-        <h1>Empowering The Nation</h1>
+        <h1>EMPOWERING THE NATION</h1>
         <nav>
-           
             <a href="1. Homepage.html">HOME</a>
             <a href="2. About Us.html">ABOUT US</a>
-            <a href="Courses.html">COURSES</a>
-            <a href="Short Courses.html">SHORT COURSES</a>
+            <a href="3. Courses.html">COURSES</a>
+            <a href="4. Short Courses.html">SHORT COURSES</a>
             <a href="5. Bookingspage.html">BOOKINGS</a>
             <a href="6. Contact.html">CONTACT</a>
         </nav>
     </header>
+
     <div class="content">
         <h3>Book Our Courses</h3>
         <p>Please enter your details below and any courses you would like to take. You may use the calculator below to provide you with your quote.</p>
+        
         <h1>Discount Offers</h1>
         <ul>
             <li>2 Courses - 5% off</li>
@@ -45,17 +45,7 @@
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="street-name">Street Name</label>
-            <input type="text" id="street-name" name="street-name" required>
-
-            <label for="suburb">Suburb</label>
-            <input type="text" id="suburb" name="suburb" required>
-
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" required>
-
-            <label for="zip-code">Zip / Coastal Code</label>
-            <input type="number" id="zip-code" name="zip-code" required>
+           
 
             <fieldset class="checkbox-group">
                 <legend>Select Services:</legend>
@@ -74,8 +64,12 @@
             <input type="submit" value="Submit">
         </form>
 
-        <div class="thank-you" id="thank-you-message">Thank you for your submission! An Email will be sent to you shortly!</div>
+        <div class="thank-you" id="thank-you-message" style="display: none;">Thank you for your submission! An Email will be sent to you shortly!</div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Empowering The Nation</p>
+    </footer>
 
     <script>
         document.getElementById('booking-form').addEventListener('submit', function(event) {
